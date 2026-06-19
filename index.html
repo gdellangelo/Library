@@ -9,18 +9,27 @@
 </head>
 
 <body>
-
-    <img src="./images/background.jpg" alt="background image">
+    <header>
+        <h1>My library</h1>
+        <button id="newBook">New book</button>
+    </header>
 
     <main>
-        <header>
-            <h1>Your library</h1>
-            <button class="add-button">New book</button>
-        </header>
-
-        <section class="grid-section">
-        </section>
+        <img src="./images/background.jpg" alt="background image">
+        <div class="grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </main>
+
+    <div class="overlay hidden">
+        <form action="#">
+            <input type="text">
+        </form>
+    </div>
 
     <script src="./script.js"></script>
 </body>
