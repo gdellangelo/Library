@@ -72,11 +72,11 @@ form {
     overflow-x: hidden;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(300px, 400px));
     gap: 10px;
 }
 
-.grid>div {
+.card {
     background: rgba(255, 255, 255, 0.61);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
