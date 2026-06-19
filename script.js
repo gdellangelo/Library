@@ -1,16 +1,17 @@
 const newBookBtn = document.querySelector("#newBook");
 const inputForm = document.querySelector(".hidden");
+const cancelBtn = document.querySelector("#cancel");
 
-newBookBtn.addEventListener("click", showForm)
+newBookBtn.addEventListener("click", showForm);
 
 function showForm() {
     inputForm.classList.remove("hidden");
 }
 
-const library = [];
+cancelBtn.addEventListener("click", cancelForm);
 
-function newBook(title) {
-    this.title = title;
+function cancelForm() {
+    inputForm.classList.add("hidden");
 }
 
-const book = new newBook(title);
+
