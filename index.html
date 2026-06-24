@@ -9,32 +9,43 @@
 </head>
 
 <body>
+
     <header>
         <h1>My library</h1>
-        <button id="newBook">New book</button>
+        <button id="addBookBtn">+</button>
     </header>
 
     <main>
-        <img src="./images/background.jpg" alt="background image">
-        <div class="grid">
-        </div>
+        <img src="./images/background.jpg" alt="background">
+        <div class="grid-box"></div>
     </main>
 
     <div class="overlay hidden">
-    <form action="#" id="bookForm">
-        <div>
-            <label for="title">Title</label>
-            <input type="text" id="title" required>
-        </div>
-        <div>
-            <label for="pages">Pages</label>
-            <input type="number" id="pages">
-        </div>
+            <form action="#">
+                <div>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" required>
+                </div>
 
-        <button id="cancel" type="button">Cancel</button>
-        <button id="addBook" type="submit">Add</button>
-    </form>
-</div>
+                <div>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" required>
+                </div>
+
+                <div>
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages">
+                </div>
+
+                <div>
+                    <label for="read">Readed</label>
+                    <input type="checkbox" name="read" id="read">
+                </div>
+
+                <button id="cancelFormBtn" type="button">Cancel</button>
+                <button type="submit" id="submitFormBtn">New book</button>
+            </form>
+    </div>
 
     <script src="./script.js"></script>
 </body>
