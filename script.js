@@ -51,6 +51,8 @@ function renderLibrary() {
         const card = document.createElement("div");
         card.classList.add("card");
 
+        card.dataset.id = element.id;
+
         const title = document.createElement("h1");
         title.textContent = `${element.name}`;
         card.appendChild(title);
@@ -66,6 +68,15 @@ function renderLibrary() {
         const readed = document.createElement("p");
         readed.textContent = element.read ? "Read" : "Not read";
         card.appendChild(readed)
+
+        const buttonBoxCard = document.createElement("div");
+        buttonBoxCard.classList.add("buttonBoxCard");
+        card.appendChild(buttonBoxCard);
+
+        const removeCardBtn = document.createElement("button");
+        removeCardBtn.textContent = "Remove";
+        removeCardBtn.classList.add("removeCardButton");
+        buttonBoxCard.appendChild(removeCardBtn);
 
         gridBox.appendChild(card);
     })
