@@ -15,6 +15,7 @@ const gridBox = document.querySelector(".grid-box");
 const books = [];
 
 function Book(name, author, pages, read) {
+    this.id = crypto.randomUUID();
     this.name = name;
     this.author = author;
     this.pages = pages;
@@ -51,7 +52,7 @@ function renderLibrary() {
         card.classList.add("card");
 
         const title = document.createElement("h1");
-        title.textContent = `Title: ${element.name}`;
+        title.textContent = `${element.name}`;
         card.appendChild(title);
 
         const author = document.createElement("p");
@@ -63,7 +64,7 @@ function renderLibrary() {
         card.appendChild(pages);
 
         const readed = document.createElement("p");
-        readed.textContent = element.read ? "Already read" : "Not read yet";
+        readed.textContent = element.read ? "Read" : "Not read";
         card.appendChild(readed)
 
         gridBox.appendChild(card);
