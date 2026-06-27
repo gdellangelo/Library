@@ -22,6 +22,10 @@ function Book(name, author, pages, read) {
     this.read = read;
 };
 
+Book.prototype.toggleRead = function () {
+    this.read = !this.read;
+};
+
 function hideOverlay() {
     overlay.classList.add("hidden");
 }
@@ -76,6 +80,36 @@ function renderLibrary() {
         const removeCardBtn = document.createElement("button");
         removeCardBtn.textContent = "Remove";
         removeCardBtn.classList.add("removeCardButton");
+
+        const toggleReadbtn = document.createElement("button");
+        toggleReadbtn.textContent = "Read";
+
+        toggleReadbtn.addEventListener("click", () => {
+            const bookId = card.dataset.id;
+
+            const book = books.find((element) => element.id === bookId);
+
+            if (book) {
+                book.toggleRead();
+            }
+
+            renderLibrary();
+        });
+
+        removeCardBtn.addEventListener("click", () => {
+            const bookId = card.dataset.id;
+
+            const bookIndex = books.findIndex((element) => element.id === bookId);
+
+            if (bookIndex !== -1) {
+                books.splice(bookIndex, 1);
+            }
+
+            renderLibrary();
+        });
+
+        buttonBoxCard.appendChild(toggleReadbtn);
+
         buttonBoxCard.appendChild(removeCardBtn);
 
         gridBox.appendChild(card);
